@@ -1,0 +1,33 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 10-Dec-2017, 14:49:40
+    Author     : User
+*/
+
+p,h1,td,input{
+    font-family: "Verdana";
+}
+.button2 {
+    font-family: "Verdana";
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width: 110px;
+}
+.center  {
+    padding: 5px 0;
+    text-align: center;
+}
+table.center {
+        margin-left:auto; 
+        margin-right:auto;
+}
