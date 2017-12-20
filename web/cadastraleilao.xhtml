@@ -16,12 +16,12 @@
                         <td><h:inputText id = "desc" value = "#{cadastroLeilaoBean.desc}" required = "true" requiredMessage="Digite a Descricao!"/></td>
                     </tr>
                     <tr>
-                        <td><h:outputLabel value ="Valor Lance: "/></td>
+                        <td><h:outputLabel value ="Valor do Lance: "/></td>
                         <td><h:inputText id = "lancemin" value = "#{cadastroLeilaoBean.lancemin}" required = "true" requiredMessage="Digite o Lance!"/></td>
                     </tr>
                     <tr>
                         <td><h:outputLabel value ="Valor Inicial "/></td>
-                        <td><h:inputText id = "valorlance" value = "#{cadastroLeilaoBean.valorlance}" required = "true" requiredMessage="Digite o Valor inicial!"/></td>
+                        <td><h:inputText id = "valorlance" value = "#{cadastroLeilaoBean.valorlance}" /></td>
                     </tr>
                 </table>
                 <h:commandButton value ="CADASTRAR" class="button2" action="#{cadastroLeilaoBean.cadastraLeilao()}"/>
@@ -29,6 +29,10 @@
         <br/>
         <h:form>
             <h:commandButton value ="VOLTAR" class="button2" action="menu"/>
+        </h:form>
+        <br/>
+        <h:form>
+            <h:commandButton value ="LOGOUT" class="button2" action="#{menuBean.efetuarLogout()}"/>
         </h:form>
         </div>
     </h:body>

@@ -3,9 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/leilao_jsf_teste/web/index.xhtml</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/leilao_jsf_teste/src/java/DAO/LeilaoDAO.java</file>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/leilao_jsf_teste/web/consulta.xhtml</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/leilao_jsf_teste/web/menu.xhtml</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/leilao_jsf_teste/web/cadastraleilao.xhtml</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/leilao_jsf_teste/src/java/ManagedBeans/CadastroUsuarioBean.java</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/leilao_jsf_teste/src/java/ManagedBeans/CadastroLeilaoBean.java</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/leilao_jsf_teste/src/java/DAO/LeilaoDAO.java</file>
         </group>
     </open-files>
 </project-private>

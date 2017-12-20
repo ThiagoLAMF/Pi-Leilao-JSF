@@ -65,15 +65,25 @@ public class LoginBean implements Serializable{
         if(u == null) //Login sem sucesso
         {
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(
-            FacesMessage.SEVERITY_ERROR, "Usuário ou senha inválidos!", null));
+            FacesMessage.SEVERITY_ERROR, "Usuário não cadastrado!", null));
             return null;
         }
         else //Sucesso -> Login retorna usuário
         {
-            FacesContext context = FacesContext.getCurrentInstance();
-            HttpSession session = (HttpSession) context.getExternalContext().getSession(false);
-            session.setAttribute("usuario", u);
-            return "menu";
+            if(u.getSenha().compareTo(senha) == 0)
+            {
+                FacesContext context = FacesContext.getCurrentInstance();
+                HttpSession session = (HttpSession) context.getExternalContext().getSession(false);
+                session.setAttribute("usuario", u);
+                return "menu";
+            }
+            else
+            {
+                FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(
+                FacesMessage.SEVERITY_ERROR, "Senha incorreta!", null));
+                return null;
+            }
+            
         }
     }
 }

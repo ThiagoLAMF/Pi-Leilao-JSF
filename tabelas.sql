@@ -9,7 +9,7 @@ CREATE TABLE TbUsuario(
 CREATE TABLE TbLeilao(
 	Pk_Id_Leilao INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
     Ds_Leilao VARCHAR(255),
-    Fg_Encerrado BIT DEFAULT 0,
+    Status_Leilao INT DEFAULT 0, -- status 0 = cadastrado | status 1 = em andamento | status 2 = finalizado
     Lance_Minimo DECIMAL(17,3),
     Valor_Lance DECIMAL(17,3)
 );
@@ -37,3 +37,9 @@ select * from tbusuario
 select * from tbleilao
 
 select * from tblance
+
+delete from tblance
+delete from tbleilao
+
+-- drop table tblance
+-- drop table tbleilao

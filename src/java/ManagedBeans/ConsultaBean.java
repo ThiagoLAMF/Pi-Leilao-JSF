@@ -70,4 +70,13 @@ public class ConsultaBean implements Serializable {
         
         return "consulta";
     }
+    
+    public String iniciaLeilao(int idLeilao)
+    {
+        LeilaoController lc = new LeilaoController();
+        
+        lc.iniciaLeilao(idLeilao);
+        
+        return "consulta";
+    }
 }

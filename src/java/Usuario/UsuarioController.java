@@ -43,16 +43,7 @@ public class UsuarioController {
     public Usuario efetuaLogin(String login,String senha)
     {
         Usuario u = this.getUsuario(login);
-        
-        if(u != null && u.getSenha().compareTo(senha) == 0)
-        {
-            /*try {
-                res.sendRedirect("/leilao/menu.jsp");
-            } catch (IOException ex) {
-                return null;
-            }*/
-            return u;
-        }
-        else return null;
+     
+        return u;
     }
 }

@@ -11,6 +11,8 @@ import java.io.Serializable;
 import javax.inject.Named;
 import javax.enterprise.context.Dependent;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 
 /**
  *
@@ -56,13 +58,23 @@ public class CadastroUsuarioBean implements Serializable{
     
     public String efetuarCadastro()
     {   
+        //Verifica se usuário já existe:
+        UsuarioController uc = new UsuarioController();
+        
+        if(uc.getUsuario(login) != null)
+        {
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(
+            FacesMessage.SEVERITY_ERROR, "Usuário já cadastrado!", null));
+            return null;
+        }
+        
         Usuario novoUsuario = new Usuario();
         novoUsuario.setNome(nome);
         novoUsuario.setLogin(login);
         novoUsuario.setSenha(senha);
         novoUsuario.setAdmin(false);
         
-        UsuarioController uc = new UsuarioController();
+        
         
         uc.cadastraUsuario(novoUsuario);
         

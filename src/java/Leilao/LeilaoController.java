@@ -38,4 +38,9 @@ public class LeilaoController {
     {
         LeilaoDAO.encerraLeilao(idLeilao);
     }
+    
+    public void iniciaLeilao(int idLeilao)
+    {
+        LeilaoDAO.iniciaLeilao(idLeilao);
+    }
 }

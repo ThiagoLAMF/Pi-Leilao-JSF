@@ -22,7 +22,7 @@ public class LeilaoDAO {
     
     public static boolean insereLeilao(Leilao leilao)
     {
-        String query = "INSERT INTO TbLeilao(Ds_Leilao,Fg_Encerrado,Lance_Minimo,Valor_Lance) VALUES('" + leilao.getDescricao() + "'," + leilao.isFgEncerrado() + "," +
+        String query = "INSERT INTO TbLeilao(Ds_Leilao,Status_Leilao,Lance_Minimo,Valor_Lance) VALUES('" + leilao.getDescricao() + "'," + leilao.getStatus() + "," +
                         leilao.getLanceMinino() + "," + leilao.getValorLance() + ")";
         
         try
@@ -57,7 +57,7 @@ public class LeilaoDAO {
                 Leilao l = new Leilao();
                 l.setId(rs.getInt(1));
                 l.setDescricao(rs.getString(2));
-                l.setFgEncerrado(rs.getBoolean(3));
+                l.setStatus(rs.getInt(3));
                 l.setLanceMinino(rs.getFloat(4));
                 l.setValorLance(rs.getFloat(5));
                 listaLeilao.add(l);
@@ -155,7 +155,28 @@ public class LeilaoDAO {
     
      public static boolean encerraLeilao(int idLeilao)
     {
-        String queryUpdate = "UPDATE TbLeilao SET Fg_Encerrado = 1" + 
+        String queryUpdate = "UPDATE TbLeilao SET Status_Leilao = 2" + 
+                             " WHERE Pk_Id_Leilao = " + idLeilao;
+        
+        try
+        {
+            Class.forName("com.mysql.jdbc.Driver");  
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/leilao","root","");  
+  
+            Statement stmt=con.createStatement();  
+            stmt.executeUpdate(queryUpdate);
+            return true;
+        }
+        catch(Exception e)
+        {
+            return false;
+        }
+        
+    }
+     
+      public static boolean iniciaLeilao(int idLeilao)
+    {
+        String queryUpdate = "UPDATE TbLeilao SET Status_Leilao = 1" + 
                              " WHERE Pk_Id_Leilao = " + idLeilao;
         
         try

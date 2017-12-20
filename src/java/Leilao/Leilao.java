@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class Leilao {
     private int id;
     private String descricao;
-    private boolean fgEncerrado;
+    private int status;
     private float lanceMinino;
     private float valorLance;
     private ArrayList<Lance> lances;
@@ -69,12 +69,12 @@ public class Leilao {
         this.descricao = descricao;
     }
 
-    public boolean isFgEncerrado() {
-        return fgEncerrado;
+    public int getStatus() {
+        return status;
     }
 
-    public void setFgEncerrado(boolean fgEncerrado) {
-        this.fgEncerrado = fgEncerrado;
+    public void setStatus(int status) {
+        this.status = status;
     }
     
 }

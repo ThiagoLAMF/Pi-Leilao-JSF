@@ -53,6 +53,7 @@ public class CadastroLeilaoBean implements Serializable{
      * Creates a new instance of CadastroLeilaoBean
      */
     public CadastroLeilaoBean() {
+        this.valorlance = (float) 0;
     }
     
     
@@ -64,7 +65,7 @@ public class CadastroLeilaoBean implements Serializable{
         l.setDescricao(desc);
         l.setLanceMinino(lancemin);
         l.setValorLance(valorlance);
-        l.setFgEncerrado(false);
+        l.setStatus(0);
         
         
         lc.cadastrarLeilao(l);

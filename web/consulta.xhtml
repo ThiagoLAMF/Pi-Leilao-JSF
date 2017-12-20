@@ -39,8 +39,8 @@
             </h:column>
             
             <h:column>
-                <f:facet name="header">ENCERRADO</f:facet>
-                #{o.fgEncerrado == true ? 'SIM' : 'NÃO'}
+                <f:facet name="header">STATUS</f:facet>
+                #{o.status == 0 ? 'CADASTRADO' : o.status == 1 ? 'INICIADO' : 'FINALIZADO'}
             </h:column>
             
             <h:column> 
@@ -53,17 +53,20 @@
             
             <h:column >
                 <f:facet name="header"></f:facet>
-                <h:form rendered="#{o.fgEncerrado != true}">
+                <h:form rendered="#{o.status == 1}">
                     <h:commandButton action ="#{consultaBean.darLance(o.id, o.valorLance, o.lanceMinino)}" class="button2" value ="DAR LANCE"/>
                 </h:form>
-                <h:outputText value="#{o.lastUser}" rendered="#{o.fgEncerrado == true}"/>
+                <h:outputText value="#{o.lastUser}" rendered="#{o.status == 2}"/>
             </h:column>
             
 
             <h:column rendered="#{usuario.admin == true}"> 
                 <f:facet name="header"></f:facet>
-                <h:form rendered="#{o.fgEncerrado != true}">
+                <h:form rendered="#{o.status == 1}">
                     <h:commandButton action ="#{consultaBean.encerrarLeilao(o.id)}" class="button2" value ="ENCERRAR"/>
+                </h:form>
+                <h:form rendered="#{o.status == 0}">
+                    <h:commandButton action ="#{consultaBean.iniciaLeilao(o.id)}" class="button2" value ="INICIAR"/>
                 </h:form>
             </h:column>
             
@@ -72,6 +75,10 @@
         <center>
         <h:form>
             <h:commandButton action ="menu" class="button2" value ="VOLTAR"/>
+        </h:form>
+        <br/>
+        <h:form>
+            <h:commandButton value ="LOGOUT" class="button2" action="#{menuBean.efetuarLogout()}"/>
         </h:form>
         </center>
     </h:body>
